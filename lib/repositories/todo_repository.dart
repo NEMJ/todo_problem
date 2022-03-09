@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_list/models/todo.dart';
 
@@ -19,7 +17,5 @@ class TodoRepository {
   void saveTodoList(List<Todo> todos) {
     final String jsonString = json.encode(todos);
     sharedPreferences.setString(todoListKey, jsonString);
-    debugPrint(jsonString);
   }
-
 }
